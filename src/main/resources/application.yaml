@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: poc-rag-spring-ai
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_ai_db
+    username: postgres
+    password: postgrespassword
+    driver-class-name: org.postgresql.Driver
+
+  ai:
+    ollama:
+      base-url: http://localhost:11434
+      chat:
+        options:
+          model: llama3.2
+          temperature: 0.2
+      embedding:
+        options:
+          model: nomic-embed-text
+
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimensions: 768
+        initialize-schema: true
+
+  resilience4j:
+    retry:
+      instances:
+        llmRetry:
+          max-attempts: 3
+          wait-duration: 1s

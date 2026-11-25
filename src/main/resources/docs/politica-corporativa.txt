@@ -1,0 +1,10 @@
+POLÍTICA INTERNA DE REEMBOLSO E HOME OFFICE - EMPRESA ACME TECH (2026)
+
+1. Auxílio Home Office:
+Todos os colaboradores e prestadores de serviço PJ têm direito a um auxílio mensal fixo de R$ 450,00 para custeio de internet e energia elétrica, pago no 5º dia útil.
+
+2. Reembolso de Certificações Técnicas:
+A empresa reembolsa 100% do valor de provas de certificação aprovadas (como AWS, Spring ou Kubernetes), limitado ao teto anual de US$ 600,00 por profissional. Em caso de reprovação, não há reembolso.
+
+3. Horário Núcleo de Colaboração:
+O horário núcleo obrigatório para reuniões de alinhamento das squads é das 10h00 às 16h00 (horário de Brasília).
