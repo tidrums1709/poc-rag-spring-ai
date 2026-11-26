@@ -9,6 +9,9 @@ spring:
     driver-class-name: org.postgresql.Driver
 
   ai:
+    model:
+      chat: ollama
+      embedding: ollama
     ollama:
       base-url: http://localhost:11434
       chat:
@@ -18,7 +21,6 @@ spring:
       embedding:
         options:
           model: nomic-embed-text
-
     vectorstore:
       pgvector:
         index-type: HNSW
@@ -26,9 +28,9 @@ spring:
         dimensions: 768
         initialize-schema: true
 
-  resilience4j:
-    retry:
-      instances:
-        llmRetry:
-          max-attempts: 3
-          wait-duration: 1s
+resilience4j:
+  retry:
+    instances:
+      llmRetry:
+        max-attempts: 3
+        wait-duration: 1s

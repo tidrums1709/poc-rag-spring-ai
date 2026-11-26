@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://your-rds-endpoint.rds.amazonaws.com:5432/spring_ai_db}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  ai:
+    model:
+      chat: bedrock-converse
+      embedding: bedrock-titan
+    bedrock:
+      aws:
+        region: ${AWS_REGION:us-east-1}
+      converse:
+        chat:
+          options:
+            model: anthropic.claude-3-5-sonnet-20240620-v1:0
+            temperature: 0.2
+            max-tokens: 1024
+      titan:
+        embedding:
+          options:
+            model: amazon.titan-embed-text-v2:0
+            dimensions: 1024
+
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimensions: 1024
+        initialize-schema: false # Em produção, migrações via Flyway/Liquibase
